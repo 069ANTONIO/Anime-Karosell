@@ -9,7 +9,6 @@ header{
   background-size: cover;
   text-align: center;
   background-position: center;
-  /*padding: 280px;*/
   padding: 30vh 5vw;
 }
 
@@ -62,9 +61,6 @@ header h1::after {
 }
 
 @media (max-width: 400px) {
-  header {
-    padding: 10vh 5vw;
-  }
 
   header h1 {
     padding: 15px 25px;
@@ -106,23 +102,13 @@ main{
   animation: aniRun 20s linear infinite;
 }
 
-.dabi{
-  background-image: url("Dabi1.webp");
-}
 
-.doffy{
-  background-image: url("Doffy3.jpg");
-}
-
-.gin{
-  background-image: url("Gin1.avif");
-}
 
 @keyframes aniRun{
   from{
-    transform: perspective(1000px) rotateX(-10deg) rotateY(0deg);
+    transform: perspective(1000px) rotateX(-8deg) rotateY(0deg);
   }to{
-    transform: perspective(1000px) rotateX(-10deg) rotateY(360deg);
+    transform: perspective(1000px) rotateX(-8deg) rotateY(360deg);
   }
 }
 
@@ -140,3 +126,60 @@ main{
   object-fit: cover;
   object-position: center;
 }
+
+.background{
+  position: absolute;
+  width: 30vw;
+  height: 90vh;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.dabicov{
+  background-image: url("DabiBack3.webp");
+  background-size: cover;
+  background-position: center;
+}
+
+.doffycov{
+  background-image: url("DoffyBack4.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.gincov{
+  background-image: url("GinBack2.png");
+  background-size: cover;
+  background-position: center;
+  width: 40vw;
+}
+
+@media (max-width: 600px){
+  .dabi,
+  .doffy,
+  .gin{
+    width: 150px;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .item{
+    transform:
+  rotateY( calc( (var(--DabiPos) - 1 ) * (360deg / var(--count)) )) 
+  translateZ(400px);
+  }
+
+  .background{
+    width: 75vw;
+    height: 50vh;
+    bottom: 40%;
+  }
+
+  .gincov{
+    width: 85vw;
+    height: 40vh;
+  }
+}
+
