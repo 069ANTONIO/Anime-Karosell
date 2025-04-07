@@ -103,6 +103,58 @@
         <div class="background gincov"></div>
 
       </div>
+
+      <div class="zitate">
+        <h2>Zitate</h2>
+        <div class="zitaten-container">
+          <h3 class="name"></h3>
+          <p class="zitat"></p>
+        </div>
+      </div>
     </main>
+
+    <script>
+      const zitatenContainer = document.querySelector('.zitaten-container');
+      const name = document.querySelector('.name');
+      const zitat = document.querySelector('.zitat');
+
+      const quotes = [
+        // Dabi
+    { character: "Dabi", text: "You reap what you sow. Let's see what you've sown." },
+    { character: "Dabi", text: "I'm just doing what I want." },
+    { character: "Dabi", text: "Heroes? They're just glorified hypocrites." },
+
+    // Doffy
+    { character: "Donquixote Doflamingo", text: "Pirates are evil? The Marines are righteous? These terms have always changed throughout history." },
+    { character: "Donquixote Doflamingo", text: "Those who stand at the top determine what's wrong and what's right." },
+    { character: "Donquixote Doflamingo", text: "Justice will prevail? Of course it will! Whoever wins this war becomes justice!" },
+
+    // Gin
+    { character: "Gin Ichimaru", text: "You really think you can kill me with such weak attacks?" },
+    { character: "Gin Ichimaru", text: "I'm a snake, I lie a lot. Would you trust a snake?" },
+    { character: "Gin Ichimaru", text: "Just because no one understands you doesn't mean you're an artist." }
+      ];
+
+      function showRandomQuote(){
+        const randomIndex = Math.floor(Math.random() * quotes.length);
+        const randomQuote = quotes[randomIndex];
+        name.textContent = randomQuote.character;
+        zitat.textContent = randomQuote.text;
+
+        if(name.textContent === "Dabi"){
+          zitatenContainer.style.backgroundImage = "url('DabiBack3.webp')";
+        }else if(name.textContent === "Donquixote Doflamingo"){
+          zitatenContainer.style.backgroundImage = "url('DoffyBack4.png')";
+        }else if(name.textContent === "Gin Ichimaru"){
+          zitatenContainer.style.backgroundImage = "url('GinBack2.png')";
+        }
+      }
+
+      showRandomQuote();
+
+      setInterval(() => {
+        showRandomQuote();
+      }, 5000);
+    </script>
   </body>
 </html>
